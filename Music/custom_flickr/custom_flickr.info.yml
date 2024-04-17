@@ -1,0 +1,8 @@
+name: Flickr Custom Module
+description: Customizations for Flickr
+type: module
+core_version_requirement: ^8.8 || ^9 || ^10
+package: 'Custom'
+
+libraries:
+  - 'custom_flickr/slick-slider'

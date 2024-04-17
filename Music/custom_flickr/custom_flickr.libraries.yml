@@ -1,0 +1,9 @@
+slick-slider:
+  css:
+    theme:
+      /libraries/slick/slick/slick.css: {}
+      /libraries/slick/slick/slick-theme.css: {}
+      css/flickr.css: {}
+  js:
+    /libraries/slick/slick/slick.min.js: {}
+    js/flickr.js: {}

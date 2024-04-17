@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the Flickr module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_theme().
+ */
+function custom_flickr_theme($existing, $type, $theme, $path) {
+  return [
+    'flickr_slider' => [
+      'variables' => ['photos' => []],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_flickr_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Fetching form id of photo album for flickr.
+  if ($form_id == 'node_photo_album_form' || $form_id == 'node_photo_album_edit_form') {
+    $form['actions']['submit']['#submit'][] = 'custom_flickr_photo_album_submit_handler';
+  }
+}
+
+/**
+ * Custom submit handler for node photo_album form.
+ */
+function custom_flickr_photo_album_submit_handler($form, FormStateInterface $form_state) {
+  $node_id = $form_state->getValue('nid');
+  // Get the submitted Flickr ID.
+  $submitted_photoset_id = $form_state->getValue('field_album_flickr_id')[0]['value'];
+  if (!empty($submitted_photoset_id)) {
+    $url = Url::fromRoute('custom_flickr.display_photoset', [
+      'node' => $node_id,
+      'photoset_id' => $submitted_photoset_id,
+    ])->toString();
+    $response = new RedirectResponse($url);
+    $response->send();
+  }
+}

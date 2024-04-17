@@ -1,0 +1,18 @@
+<div class="flickr-slider">
+  <div class="slider slider-for">
+    {% for photo in photos %}
+      <div class="slider-banner-image">
+        {{ photo }}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="slider slider-nav thumb-image">
+    {% for photo in photos %}
+      <div class="thumbnail-image">
+        <div class="thumbImg">
+          <img src="{{ photo['#uri'] }}" alt="{{ photo['#alt'] }}">
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

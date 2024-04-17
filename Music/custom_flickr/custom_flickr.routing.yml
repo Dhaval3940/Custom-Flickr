@@ -1,0 +1,8 @@
+custom_flickr.display_photoset:
+  path: '/flickr-photo-gallery/{node}/{photoset_id}'
+  defaults:
+    _controller: '\Drupal\custom_flickr\Controller\FlickrController::content'
+    _title_callback: '\Drupal\custom_flickr\Controller\FlickrController::pageTitle'
+  requirements:
+    _permission: 'access content'
+    node: \d+

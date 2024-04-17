@@ -1,0 +1,80 @@
+.slider-for {
+  width: 75% !important;
+  margin: 0px auto;
+  object-fit: contain;
+}
+.slider-for img {
+  width: 100% !important;
+  height: 550px !important;
+  margin: 0px auto;
+  object-fit: contain;
+}
+.slider-nav img {
+  width: 97% !important;
+  object-fit: cover !important;
+  height: 150px !important;
+  margin: auto;
+  margin-top: 1px !important;
+}
+.slider-nav .slick-list.draggable {
+  background: #000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.slick-prev,
+.slick-next {
+  top: 50% !important;
+  scale: 0.8;
+}
+.slick-prev {
+  margin-top: 14px !important;
+}
+.slick-next {
+  margin-top: -7px;
+}
+.full-screen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+}
+.full-screen-image img {
+  max-width: 60% !important;
+  display: block;
+  object-fit: contain;
+}
+.close-btn {
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+.close-btn {
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: 1366px) {
+  .slider-for img {
+    height: 475px !important;
+  }
+}
+@media (max-width: 991px) {
+  .slider-for img {
+    height: auto !important;
+    object-fit: contain;
+  }
+  .flickr-slider {
+    padding-left: 5px;
+  }
+  .flickr-slider .thumb-image {
+    width: 85%;
+    margin: 0 auto;
+  }
+}

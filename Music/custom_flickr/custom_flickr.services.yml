@@ -1,0 +1,5 @@
+services:
+  custom_flickr.event_subscriber:
+    class: Drupal\custom_flickr\EventSubscriber\FlickrEntityViewSubscriber
+    tags:
+      - { name: event_subscriber }
